@@ -1,6 +1,7 @@
 ---
 title: "M2. 몰입형 vs 인컨텍스트"
 nav_order: 3
+lang: ko
 ---
 
 # 에이전트 활용 — 몰입형 vs 인컨텍스트

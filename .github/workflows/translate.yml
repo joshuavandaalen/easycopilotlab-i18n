@@ -1,0 +1,44 @@
+name: Auto-translate Korean content to English
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "index.md"
+      - "docs/**/*.md"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install deep-translator
+
+      - name: Run translation script
+        run: python .github/scripts/translate.py
+
+      - name: Commit translated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add en/
+          if git diff --cached --quiet; then
+            echo "No translation changes to commit."
+          else
+            git commit -m "chore: auto-translate Korean content to English [skip ci]"
+            git push
+          fi

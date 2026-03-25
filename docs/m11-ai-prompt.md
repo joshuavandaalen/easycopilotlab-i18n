@@ -1,6 +1,7 @@
 ---
 title: "M11. AI 프롬프트"
 nav_order: 12
+lang: ko
 ---
 
 # AI 프롬프트 — Flow에 AI 심기

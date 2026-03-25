@@ -1,6 +1,7 @@
 ---
 title: "M8. 배포"
 nav_order: 9
+lang: ko
 ---
 
 # 게시·배포 — Teams + Copilot

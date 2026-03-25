@@ -1,6 +1,7 @@
 ---
 title: "M1. Copilot 원리 + 보안"
 nav_order: 2
+lang: ko
 ---
 
 # Copilot 원리 + 보안·컴플라이언스

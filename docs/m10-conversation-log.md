@@ -1,6 +1,7 @@
 ---
 title: "M10. 대화기록"
 nav_order: 11
+lang: ko
 ---
 
 # 신입사원의 일기 — 대화기록 Excel 저장
