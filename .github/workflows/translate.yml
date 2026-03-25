@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  models: read   # Required to call GitHub Models (Azure OpenAI)
 
 jobs:
   translate:
@@ -26,9 +27,11 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install deep-translator
+        run: pip install openai
 
-      - name: Run translation script
+      - name: Run translation (GitHub Models — Azure OpenAI)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python .github/scripts/translate.py
 
       - name: Commit translated files
