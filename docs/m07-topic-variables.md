@@ -1,6 +1,7 @@
 ---
 title: "M7. Topic + 변수"
 nav_order: 8
+lang: ko
 ---
 
 # 대본(Topic) + 포스트잇(변수)

@@ -5,6 +5,12 @@ theme: just-the-docs
 url: "https://microsoft.github.io"
 baseurl: "/easycopilotlab"
 
+# i18n — jekyll-polyglot
+languages: ["ko", "en"]
+default_lang: "ko"
+exclude_from_localization: ["assets", ".github", "_sass", "Gemfile", "LICENSE", "README.md"]
+parallel_localization: false
+
 # 검색 설정
 search_enabled: true
 search:

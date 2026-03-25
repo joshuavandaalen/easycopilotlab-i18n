@@ -1,6 +1,7 @@
 ---
 title: "M9. Flow + 메일 전달"
 nav_order: 10
+lang: ko
 ---
 
 # 손발 달기 — Flow + 메일로 문의 전달

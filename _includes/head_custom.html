@@ -1,0 +1,64 @@
+<!-- Language switcher — auto-detects current language from URL -->
+<style>
+  .lang-switcher-fixed {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 999;
+  }
+
+  .lang-switcher-fixed a {
+    display: inline-block;
+    padding: 0.45rem 0.9rem;
+    background: var(--link-color, #7253ed);
+    color: #fff !important;
+    border-radius: 1.5rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    transition: opacity 0.2s;
+  }
+
+  .lang-switcher-fixed a:hover {
+    opacity: 0.85;
+  }
+</style>
+
+<script>
+  (function () {
+    var baseurl = "{{ site.baseurl }}";
+    var path = window.location.pathname;
+    var enPrefix = baseurl + "/en";
+
+    var isEnglish = path.startsWith(enPrefix + "/") || path === enPrefix;
+
+    var switcher = document.createElement("div");
+    switcher.className = "lang-switcher-fixed";
+
+    var link = document.createElement("a");
+
+    if (isEnglish) {
+      // Currently on English page → offer Korean link
+      var koPath = path.replace(enPrefix, baseurl);
+      link.href = koPath || baseurl + "/";
+      link.innerHTML = "🇰🇷 한국어";
+      link.title = "한국어로 보기";
+      link.setAttribute("lang", "ko");
+      link.setAttribute("hreflang", "ko");
+    } else {
+      // Currently on Korean page → offer English link
+      var enPath = enPrefix + path.replace(baseurl, "");
+      link.href = enPath;
+      link.innerHTML = "🇺🇸 English";
+      link.title = "View in English";
+      link.setAttribute("lang", "en");
+      link.setAttribute("hreflang", "en");
+    }
+
+    switcher.appendChild(link);
+    document.addEventListener("DOMContentLoaded", function () {
+      document.body.appendChild(switcher);
+    });
+  })();
+</script>

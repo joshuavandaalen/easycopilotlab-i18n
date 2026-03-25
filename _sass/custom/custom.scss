@@ -26,3 +26,24 @@
     color: #fff;
   }
 }
+
+// Language switcher
+.lang-switcher {
+  display: inline-block;
+  margin-left: 1rem;
+
+  .lang-btn {
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    border: 1px solid currentColor;
+    border-radius: 0.3rem;
+    font-size: 0.8rem;
+    text-decoration: none;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+}

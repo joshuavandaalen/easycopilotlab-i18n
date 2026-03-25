@@ -1,0 +1,7 @@
+<div class="lang-switcher">
+  {% if site.active_lang == "en" %}
+    <a href="{{ site.baseurl }}{{ page.url | replace: '/en/', '/' }}" class="lang-btn" title="한국어로 보기" lang="ko" hreflang="ko">🇰🇷 한국어</a>
+  {% else %}
+    <a href="{{ site.baseurl }}/en{{ page.url }}" class="lang-btn" title="View in English" lang="en" hreflang="en">🇺🇸 English</a>
+  {% endif %}
+</div>

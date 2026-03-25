@@ -2,6 +2,7 @@
 title: Home
 layout: home
 nav_order: 0
+lang: ko
 ---
 
 # 문과생을 위한 Copilot Studio
